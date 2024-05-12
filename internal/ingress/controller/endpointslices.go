@@ -50,7 +50,6 @@ func getEndpointsFromSlices(s *corev1.Service, port *corev1.ServicePort, proto c
 
 	svcKey := k8s.MetaNamespaceKey(s)
 	var useTopologyHints bool
-
 	// ExternalName services
 	if s.Spec.Type == corev1.ServiceTypeExternalName {
 		if ip := net.ParseIP(s.Spec.ExternalName); s.Spec.ExternalName == "localhost" ||
